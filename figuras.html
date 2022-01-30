@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Figuras Geométricas</title>
+</head>
+<body>
+    <header class="header">
+        <h1>Figuras Geométricas</h1>
+    </header>
+    <section class="container">
+        <div class="circle">
+            <h2>Circulo</h2>
+            <form>
+                <label for="inputRadioCircle">
+                    Radio <input type="number" id="inputRadioCircle">
+                </label>
+                <button type="button" id="btnDiameterCircle">Calcular diametro del circulo</button>
+                <button type="button" id="btnPerimeterCircle">Calcular perimetro del circulo</button>
+                <button type="button" id="btnAreaCircle">Calcular área del circulo</button>
+            </form>
+        </div>
+        <div class="square">
+            <h2>Cuadrado</h2>
+            <form>
+                <label for="inputSideSquare">
+                    Lados <input type="number" id="inputSideSquare">
+                </label>
+                <button type="button" id="btnPerimeterSquare">Calcular perimetro del cuadrado</button>
+                <button type="button" id="btnAreaSquare">Calcular área del cuadrado</button>
+            </form>
+        </div>
+        <div class="triangle">
+            <h2>Triangulo</h2>
+            <form>
+                <label for="inputBaseTriangle">
+                    Base <input type="number" id="inputBaseTriangle">
+                </label>
+                <label for="inputHeightTriangle">
+                    Altura <input type="number" id="inputHeightTriangle">
+                </label>
+                <label for="inputSideATriangle">
+                    Lado A <input type="number" id="inputSideATriangle">
+                </label>
+                <label for="inputSideBTriangle">
+                    Lado B <input type="number" id="inputSideBTriangle">
+                </label>
+                <button type="button" id="btnPerimeterTriangle">Calcular perimetro del triangulo</button>
+                <button type="button" id="btnAreaTriangle">Calcular área del triangulo</button>
+            </form>
+        </div>
+        <p id="resultPerimeter"></p>
+        <p id="resultArea"></p>
+        <p id="resultDiameter"></p>
+    </section>
+
+    <script src="./js/figuras.js"></script>
+</body>
+</html>

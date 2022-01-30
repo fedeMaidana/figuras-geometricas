@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    font-size: 62.5%;
+}
+.header{
+    height: 20vh;
+    width: 100vw;
+    background-color: aquamarine;
+}
+.container{
+    width: 100vw;
+    height: 70vh;
+    background-color: coral;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.circle{
+    background-color: rgb(125, 131, 36);
+}
+.square{
+    background-color: crimson;
+}
+.triangle{
+    background-color: rgb(32, 103, 121);
+}
+.container p{
+    grid: 4;
+}
