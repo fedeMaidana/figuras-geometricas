@@ -7,55 +7,108 @@
     <title>Figuras Geométricas</title>
 </head>
 <body>
+
     <header class="header">
-        <h1>Figuras Geométricas</h1>
+        <h1>Calculadora geometrica</h1>
     </header>
+
     <section class="container">
-        <div class="circle">
+
+        <div class="circle skin-figure">
             <h2>Circulo</h2>
+
             <form>
                 <label for="inputRadioCircle">
-                    Radio <input type="number" id="inputRadioCircle">
+                    Radio <br><input type="number" id="inputRadioCircle">
                 </label>
-                <button type="button" id="btnDiameterCircle">Calcular diametro del circulo</button>
-                <button type="button" id="btnPerimeterCircle">Calcular perimetro del circulo</button>
-                <button type="button" id="btnAreaCircle">Calcular área del circulo</button>
+                <button type="button" id="btnDiameterCircle">Calcular diametro</button>
+                <button type="button" id="btnPerimeterCircle">Calcular perimetro</button>
+                <button type="button" id="btnAreaCircle">Calcular área</button>
             </form>
+
         </div>
-        <div class="square">
-            <h2>Cuadrado</h2>
-            <form>
-                <label for="inputSideSquare">
-                    Lados <input type="number" id="inputSideSquare">
-                </label>
-                <button type="button" id="btnPerimeterSquare">Calcular perimetro del cuadrado</button>
-                <button type="button" id="btnAreaSquare">Calcular área del cuadrado</button>
-            </form>
-        </div>
-        <div class="triangle">
+
+        <div class="triangle skin-figure">
             <h2>Triangulo</h2>
+
             <form>
                 <label for="inputBaseTriangle">
-                    Base <input type="number" id="inputBaseTriangle">
+                    Base <br><input type="number" id="inputBaseTriangle">
                 </label>
                 <label for="inputHeightTriangle">
-                    Altura <input type="number" id="inputHeightTriangle">
+                    Altura <br><input type="number" id="inputHeightTriangle">
                 </label>
                 <label for="inputSideATriangle">
-                    Lado A <input type="number" id="inputSideATriangle">
+                    Lado A <br><input type="number" id="inputSideATriangle">
                 </label>
                 <label for="inputSideBTriangle">
-                    Lado B <input type="number" id="inputSideBTriangle">
+                    Lado B <br><input type="number" id="inputSideBTriangle">
                 </label>
-                <button type="button" id="btnPerimeterTriangle">Calcular perimetro del triangulo</button>
-                <button type="button" id="btnAreaTriangle">Calcular área del triangulo</button>
+                <button type="button" id="btnPerimeterTriangle">Calcular perimetro</button>
+                <button type="button" id="btnAreaTriangle">Calcular área</button>
             </form>
+
         </div>
-        <p id="resultPerimeter"></p>
-        <p id="resultArea"></p>
-        <p id="resultDiameter"></p>
+
+        <div class="square skin-figure">
+            <h2>Cuadrado</h2>
+
+            <form>
+                <label for="inputSideSquare">
+                    Lados <br><input type="number" id="inputSideSquare">
+                </label>
+                <button type="button" id="btnPerimeterSquare">Calcular perimetro</button>
+                <button type="button" id="btnAreaSquare">Calcular área</button>
+            </form>
+
+        </div>
+
+        <div class="containerResult">
+            <p id="result"></p>
+
+            <div class="error" id="activeError">
+                <p id="warning"></p>
+            </div>
+        </div>
+
+
     </section>
 
+    <footer>
+
+        <div class="navigation">
+            <ul>
+
+                <li class="list active" id="menuCircle">
+                    <a href="#">
+                        <img src="./icons/circle.svg" alt="circulo">
+                        <span class="text">Circulo</span>
+                    </a>
+                </li>
+
+                <li class="list" id="menuTriangle">
+                    <a href="#">
+                        <img src="./icons/triangle.svg" alt="triangulo">
+                        <span class="text">Triangulo</span>
+                    </a>
+                </li>
+
+                <li class="list" id="menuSquare">
+                    <a href="#">
+                        <img src="./icons/square.svg" alt="cuadrado">
+                        <span class="text">Cuadrado</span>
+                    </a>
+                </li>
+
+                <div class="indicator"></div>
+            </ul>
+        </div>
+
+    </footer>
+
     <script src="./js/figuras.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/mistakes.js"></script>
+
 </body>
 </html>

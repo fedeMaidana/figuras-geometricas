@@ -1,14 +1,10 @@
 //-------------------------------------------- VARIABLES ---------------------------------------------------//
+
 //Variables del circulo
 let circleRadio = document.getElementById("inputRadioCircle");
 let buttonDiameterCircle = document.getElementById("btnDiameterCircle");
 let buttonPerimeterCircle = document.getElementById("btnPerimeterCircle");
 let buttonAreaCircle = document.getElementById("btnAreaCircle");
-
-//variables del cuadraddo
-let sideSquare = document.getElementById("inputSideSquare");
-let buttonAreaSquare = document.getElementById("btnAreaSquare");
-let buttonPerimeterSquare = document.getElementById("btnPerimeterSquare");
 
 //Variables del triangulo
 let triangleBase = document.getElementById("inputBaseTriangle");
@@ -18,25 +14,31 @@ let sideBTriangle = document.getElementById("inputSideBTriangle");
 let buttonPerimeterTriangle = document.getElementById("btnPerimeterTriangle");
 let buttonAreaTriangle = document.getElementById("btnAreaTriangle");
 
+//variables del cuadraddo
+let sideSquare = document.getElementById("inputSideSquare");
+let buttonAreaSquare = document.getElementById("btnAreaSquare");
+let buttonPerimeterSquare = document.getElementById("btnPerimeterSquare");
+
 //variables para mostrar el resultado
-let resultP = document.getElementById("resultPerimeter");
-let resultA = document.getElementById("resultArea");
-let resultD = document.getElementById("resultDiameter");
+let result = document.getElementById("result");
+
+let error = document.getElementById("activeError");
+error.classList.remove("error");
 
 //-------------------------------------------- EVENTOS ---------------------------------------------------//
 
 //eventos del circulo
-buttonDiameterCircle.addEventListener("click", showDiameterCircle)
+buttonDiameterCircle.addEventListener("click", showDiameterCircle);
 buttonPerimeterCircle.addEventListener("click", showPerimeterCircle);
 buttonAreaCircle.addEventListener("click", showAreaCircle);
-
-//eventos del cuadrado
-buttonPerimeterSquare.addEventListener("click", showPerimeterSquare);
-buttonAreaSquare.addEventListener("click", showAreaSquare);
 
 //eventos del triangulo
 buttonPerimeterTriangle.addEventListener("click", showPerimeterTriangle);
 buttonAreaTriangle.addEventListener("click", showAreaTriangle);
+
+//eventos del cuadrado
+buttonPerimeterSquare.addEventListener("click", showPerimeterSquare);
+buttonAreaSquare.addEventListener("click", showAreaSquare);
 
 //-------------------------------------------- CALCULOS ---------------------------------------------------//
 
@@ -57,16 +59,6 @@ function circleArea(rd){
     return (rd ** 2) * PI;
 }
 
-//calculos del cuadrado
-
-function perimeterSquare(sdSqr){
-    return sdSqr * 4;
-}
-
-function areaSquare(sdSqr){
-    return sdSqr ** 2;
-}
-
 //calculos del triangulo
 
 function trianglePerimeter(trnglSd1, trnglSd2, trnglBs){
@@ -77,40 +69,42 @@ function triangleArea(trnglBs, trnglHght){
     return (trnglBs * trnglHght) / 2;
 }
 
-//-------------------------------------------- RESULTADO ---------------------------------------------------//
+//calculos del cuadrado
+
+function perimeterSquare(sdSqr){
+    return sdSqr * 4;
+}
+
+function areaSquare(sdSqr){
+    return sdSqr ** 2;
+}
+
+//-------------------------------------------- MOSTRAR RESULTADO -------------------------------------------//
 
 //resultados del circulo
 
 function showDiameterCircle(){
     let radio = parseInt(circleRadio.value)
     let value = circleDiameter(radio);
-    resultD.innerHTML = value;
+    result.innerHTML = "El diametro del circulo es de: " + value + " cm";
+    warning.innerHTML = "";
+    error.classList.remove("error");
 }
 
 function showPerimeterCircle(){
     let radio = parseInt(circleRadio.value);
     let value = circlePerimeter(radio);
-    resultP.innerHTML = value;
+    result.innerHTML = "El perimetro del circulo es de: " + value.toFixed(2) + " cm";
+    warning.innerHTML = "";
+    error.classList.remove("error");
 }
 
 function showAreaCircle(){
     let radio = parseInt(circleRadio.value);
     let value = circleArea(radio);
-    resultA.innerHTML = value;
-}
-
-//resultados del cuadrado
-
-function showPerimeterSquare(){
-    let sides = parseInt(sideSquare.value);
-    let value = perimeterSquare(sides);
-    resultP.innerHTML = value + " cm";
-}
-
-function showAreaSquare(){
-    let sides = parseInt(sideSquare.value);
-    let value = areaSquare(sides);
-    resultA.innerHTML = value + " cm";
+    result.innerHTML = "El area del circulo es de: " + value.toFixed(2) + " cm";
+    warning.innerHTML = "";
+    error.classList.remove("error");
 }
 
 //resultados del triangulo
@@ -120,12 +114,35 @@ function showPerimeterTriangle(){
     let triangleSide2 = parseInt(sideBTriangle.value);
     let base = parseInt(triangleBase.value)
     let value = trianglePerimeter(triangelSide1, triangleSide2, base);
-    resultP.innerHTML = value;
+    result.innerHTML = "El perimetro del triangulo es de: " + value + " cm";
+    warning.innerHTML = "";
+    error.classList.remove("error");
 }
 
 function showAreaTriangle(){
     let base = parseInt(triangleBase.value);
     let height = parseInt(triangleHeight.value);
     let value = triangleArea(base, height);
-    resultA.innerHTML = value;
+    result.innerHTML = "El area del triangulo es de: " + value + " cm";
+    warning.innerHTML = "";
+    error.classList.remove("error");
 }
+
+//resultados del cuadrado
+
+function showPerimeterSquare(){
+    let sides = parseInt(sideSquare.value);
+    let value = perimeterSquare(sides);
+    result.innerHTML = "El perimetro del cuadrado es de: " + value + " cm";
+    warning.innerHTML = "";
+    error.classList.remove("error");
+}
+
+function showAreaSquare(){
+    let sides = parseInt(sideSquare.value);
+    let value = areaSquare(sides);
+    result.innerHTML = "El area del cuadrado es de: " + value + " cm";
+    warning.innerHTML = "";
+    error.classList.remove("error");
+}
+
