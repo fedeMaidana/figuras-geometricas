@@ -86,7 +86,7 @@ function areaSquare(sdSqr){
 function showDiameterCircle(){
     let radio = parseInt(circleRadio.value)
     let value = circleDiameter(radio);
-    result.innerHTML = "El diametro del circulo es de: " + value + " cm";
+    result.innerHTML = "Su diametro es de: " + value + " cm";
     warning.innerHTML = "";
     error.classList.remove("error");
 }
@@ -94,7 +94,7 @@ function showDiameterCircle(){
 function showPerimeterCircle(){
     let radio = parseInt(circleRadio.value);
     let value = circlePerimeter(radio);
-    result.innerHTML = "El perimetro del circulo es de: " + value.toFixed(2) + " cm";
+    result.innerHTML = "Su perimetro es de: " + value.toFixed(2) + " cm";
     warning.innerHTML = "";
     error.classList.remove("error");
 }
@@ -102,7 +102,7 @@ function showPerimeterCircle(){
 function showAreaCircle(){
     let radio = parseInt(circleRadio.value);
     let value = circleArea(radio);
-    result.innerHTML = "El area del circulo es de: " + value.toFixed(2) + " cm";
+    result.innerHTML = "Su area es de: " + value.toFixed(2) + " cm<sup>2</sup>";
     warning.innerHTML = "";
     error.classList.remove("error");
 }
@@ -114,7 +114,7 @@ function showPerimeterTriangle(){
     let triangleSide2 = parseInt(sideBTriangle.value);
     let base = parseInt(triangleBase.value)
     let value = trianglePerimeter(triangelSide1, triangleSide2, base);
-    result.innerHTML = "El perimetro del triangulo es de: " + value + " cm";
+    result.innerHTML = "Su perimetro es de: " + value + " cm";
     warning.innerHTML = "";
     error.classList.remove("error");
 }
@@ -123,7 +123,7 @@ function showAreaTriangle(){
     let base = parseInt(triangleBase.value);
     let height = parseInt(triangleHeight.value);
     let value = triangleArea(base, height);
-    result.innerHTML = "El area del triangulo es de: " + value + " cm";
+    result.innerHTML = "Su area es de: " + value + " cm<sup>2</sup>";
     warning.innerHTML = "";
     error.classList.remove("error");
 }
@@ -133,7 +133,7 @@ function showAreaTriangle(){
 function showPerimeterSquare(){
     let sides = parseInt(sideSquare.value);
     let value = perimeterSquare(sides);
-    result.innerHTML = "El perimetro del cuadrado es de: " + value + " cm";
+    result.innerHTML = "Su perimetro es de: " + value + " cm";
     warning.innerHTML = "";
     error.classList.remove("error");
 }
@@ -141,7 +141,7 @@ function showPerimeterSquare(){
 function showAreaSquare(){
     let sides = parseInt(sideSquare.value);
     let value = areaSquare(sides);
-    result.innerHTML = "El area del cuadrado es de: " + value + " cm";
+    result.innerHTML = "Su area es de: " + value + " cm<sup>2</sup>";
     warning.innerHTML = "";
     error.classList.remove("error");
 }
