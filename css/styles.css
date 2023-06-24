@@ -447,14 +447,20 @@ footer{
     .navigation ul li a{
         line-height: 85px;
     }
-    .indicator{
-        top: 82.1%;
-        left: 10.8%;
+    .navigation ul li.active a img {
+        transform: translateY(-32px);
+    }
+    .navigation ul li:nth-child(1).active ~ .indicator{
+        transform: translateX(calc(1px));
     }
     .navigation ul li:nth-child(2).active ~ .indicator{
         transform: translateX(calc(119.4px * 1));
     }
     .navigation ul li:nth-child(3).active ~ .indicator{
         transform: translateX(calc(118px * 2));
+    }
+    .indicator{
+        top: 93.5%;
+        left: 10.8%;
     }
 }
